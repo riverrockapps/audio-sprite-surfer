@@ -1,9 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="audioSpriteSurferApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>audiosprite-json-generator</title>
+
+    <link href="data:image/gif;" rel="icon" type="image/x-icon" />
+
+    <meta name="description" content="Generate JSON for your Audio Sprites.">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -15,40 +20,78 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="audioSpriteSurferApp">
+
+  <body keys-global>
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+    <div ng-view></div>
+
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">audioSpriteSurfer</h3>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Props</h2>
+          <div class="alert alert-info" role="alert">
+            <p>This tool makes heavy use of <a href="http://www.wavesurfer.fm/">wavesurfer.fm</a> and was forked from <a href="https://github.com/katspaugh/wavesurfer.js">github</a>.</p>
+          </div>
+        </div>
       </div>
 
-      <div ng-view=""></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Discuss</h2>
+          <div id="disqus_thread"></div>
+        </div>
+      </div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <div class="footer row">
+
+        <div class="col-sm-12">
+
+          <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+            <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
+          </a>
+
+          <a href="http://github.com/riverrockapps/audio-sprite-surfer">
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+              audio-sprite-surfer
+            </span>
+          </a>
+
+          by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.riverrockapps.com/" property="cc:attributionName" rel="cc:attributionURL">River Rock Apps Inc.</a> is licensed under a&nbsp;<a style="white-space: nowrap" rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+
+        </div>
+
       </div>
     </div>
 
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+    <script>
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'riverrockapps'; // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
     </script>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54307877-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -69,13 +112,26 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/wavesurfer.js/build/wavesurfer.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/generator.js"></script>
+    <script src="scripts/controllers/edit.js"></script>
+    <script src="scripts/directives/form-number-spinner.js"></script>
+    <script src="scripts/directives/waveform-sprite-view.js"></script>
+    <script src="scripts/directives/waveform-sprites-view.js"></script>
+    <script src="scripts/directives/audio-sprite-surfer-keys.js"></script>
+    <script src="scripts/directives/sprite-focus-input.js"></script>
+    <script src="scripts/services/sprite-manager.js"></script>
+    <script src="scripts/services/sprite.js"></script>
+    <script src="scripts/services/wavesurfer.js"></script>
+    <script src="scripts/services/sprite-cache.js"></script>
+    <script src="scripts/services/unload-check.js"></script>
+    <script src="scripts/filters/encode-uri.js"></script>
+    <!-- endbuild -->
+
+  </body>
 </html>

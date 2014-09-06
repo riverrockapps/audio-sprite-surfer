@@ -1,0 +1,7 @@
+<div class="waveform-sprite text-center"
+      ng-class="{ active: (spriteManager.active === sprite) }"
+      ng-style="{ left: (sprite.selection.startPercentage*100)+'%', width: width }">
+
+      <button type="button" class="btn btn-xs btn-block btn-primary" ng-click="activate()">{{ sprite.model.id }}</button>
+
+</div>

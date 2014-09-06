@@ -1,0 +1,91 @@
+<div audio-sprite-surfer-keys>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Audio Sprite Surfer</h1>
+        <h2>Generate JSON for your Audio Sprites.</h2>
+        <p>Upload your audiosprite and point/click/preview to generate sprite JSON.</p>
+        <p class="lead pull-center" id="drop">Drop Audio Files Here</p>
+      </div>
+    </div>
+
+    <div class="row controls">
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-success" ng-click="create()"><i class="glyphicon glyphicon-plus"></i></button>
+        <button type="button"class="btn btn-primary" ng-click="prev()"><i class="glyphicon glyphicon-step-backward"></i></button>
+        <button type="button"class="btn btn-primary" ng-click="play()"><i class="glyphicon glyphicon-play"></i> / <i class="glyphicon glyphicon-pause"></i></button>
+        <button type="button"class="btn btn-primary" ng-click="next()"><i class="glyphicon glyphicon-step-forward"></i></button>
+        <button type="button" class="btn btn-danger" ng-click="delete()" ng-if="spriteManager.active"><i class="glyphicon glyphicon-remove"></i></button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="waveform-container" ng-keydown="keydown($event)">
+
+          <div ng-if="wavesurfer.progress">
+            Yep.... {{ wavesurfer.progress }}
+            <div class="progress progress-striped active" id="progress-bar" ng>
+              <div class="progress-bar progress-bar-info"></div>
+            </div>
+          </div>
+
+          <div id="waveform">
+            <div waveform-sprites-view />
+            <!-- Here be the waveform -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row" ng-if="spriteManager.active" ng-controller="EditCtrl">
+      <div class="col-xs-12">
+        <h3>Selected Sprite: {{ spriteManager.active.model.id }}</h3>
+        <div>
+
+          <div class="text-center">
+            <button type="button"class="btn btn-primary" ng-click="spriteManager.active.updateFromSelection()"><i class="glyphicon glyphicon-arrow-down"></i> Update Selection</button>
+          </div>
+
+          <div class="form-group clearfix" ng-keydown="keydown($event)">
+            <label for="editId" class="col-sm-2 control-label">ID:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="editId" ng-model="spriteManager.active.model.id" sprite-focus-input />
+            </div>
+          </div>
+
+          <div form-number-spinner data-id="editStart" label="Start Time" item="spriteManager.active.model.start"></div>
+          <div form-number-spinner data-id="editEnd" label="End Time" item="spriteManager.active.model.end"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>JSON</h3>
+
+        <div class="text-center">
+          <button class="btn btn-danger" ng-click="import()"><i class="glyphicon glyphicon-arrow-up"></i> Import</button>
+          <button class="btn btn-success" ng-click="export()"><i class="glyphicon glyphicon-arrow-down"></i> Export</button>
+        </div>
+
+        <div class="alert alert-danger" role="alert" ng-show="model.invalid">
+          <p>Your JSON is not properly formatted.  You can use <a href="http://jsoneditoronline.org/?json={{model.json|encodeUri}}" target="_blank">this tool</a> to quickly find the error.</p>
+        </div>
+
+        <textarea id="json" class="form-control" rows="10" ng-model="model.json"></textarea>
+
+      </div>
+    </div>
+  </div>
+
+</div>

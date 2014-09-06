@@ -1,0 +1,18 @@
+<div class="form-group" ng-keydown="keydown($event)">
+  <label for="{{id}}" class="col-sm-2 control-label">{{ label }}</label>
+  <div class="col-sm-10">
+
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="decrease()"><span class="glyphicon glyphicon-chevron-left" /></button>
+      </span>
+
+      <input type="text" class="form-control" id="{{id}}" ng-model="item" />
+
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="increase()"><span class="glyphicon glyphicon-chevron-right" /></button>
+      </span>
+    </div>
+
+  </div>
+</div>

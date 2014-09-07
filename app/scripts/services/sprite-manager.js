@@ -88,6 +88,14 @@ angular.module('audioSpriteSurferApp')
       m.active.updateToSelection();
     }
 
+    m.adjustEnd = function(ms) {
+      m.active.model.end += ms;
+    }
+
+    m.adjustStart = function(ms) {
+      m.active.model.start += ms;
+    }
+
     // listen for audio drop, sync reset of sprites with angular
     document.querySelector('#drop').addEventListener('drop', function(evt) {
       $timeout(function() {

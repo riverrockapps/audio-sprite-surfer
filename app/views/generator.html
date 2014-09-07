@@ -1,11 +1,12 @@
 <div audio-sprite-surfer-keys>
 
   <div class="container">
+
     <div class="row">
       <div class="col-xs-12">
         <h1>Audio Sprite Surfer</h1>
-        <h2>Generate JSON for your Audio Sprites.</h2>
-        <p>Upload your audiosprite and point/click/preview to generate sprite JSON.</p>
+        <h3>Generate JSON for your Audio Sprites.</h3>
+        <p>Drag and drop your sound file below and point / click to generate sprite JSON.</p>
         <p class="lead pull-center" id="drop">Drop Audio Files Here</p>
       </div>
     </div>
@@ -47,7 +48,7 @@
   <div class="container">
 
     <div class="row" ng-if="spriteManager.active" ng-controller="EditCtrl">
-      <div class="col-xs-12">
+      <div class="col-xs-7">
         <h3>Selected Sprite: {{ spriteManager.active.model.id }}</h3>
         <div>
 
@@ -66,6 +67,24 @@
           <div form-number-spinner data-id="editEnd" label="End Time" item="spriteManager.active.model.end"></div>
 
         </div>
+      </div>
+
+      <div class="col-xs-5">
+
+        <h3>Keyboard Shortcuts</h3>
+
+        <div class="alert alert-info" role="alert">
+          <p><strong>space</strong> play / stop</p>
+          <p><strong>ctrl+left</strong> previous</p>
+          <p><strong>ctrl+right</strong> next</p>
+          <p><strong>ctrl+enter</strong> create from selection</p>
+          <p><strong>ctrl+del</strong> delete selected</p>
+          <p><strong>shift+left</strong> decrease start time</p>
+          <p><strong>shift+right</strong> increase start time</p>
+          <p><strong>alt+left</strong> decrease end time</p>
+          <p><strong>alt+right</strong> increase end time</p>
+        </div>
+
       </div>
     </div>
 

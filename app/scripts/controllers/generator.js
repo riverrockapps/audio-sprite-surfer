@@ -8,7 +8,7 @@
  * Controller of the audioSpriteSurferApp
  */
 angular.module('audioSpriteSurferApp')
-  .controller('GeneratorCtrl', function($scope, $filter, wavesurfer, spriteManager, demoSpriteJson) {
+  .controller('GeneratorCtrl', function($scope, $filter, $timeout, wavesurfer, spriteManager, demoSpriteJson) {
 
     $scope.wavesurfer = wavesurfer;
 
@@ -64,7 +64,10 @@ angular.module('audioSpriteSurferApp')
 
     // once loaded, import the demo json
     wavesurfer.once('ready', function() {
-      spriteManager.import(JSON.parse(demoSpriteJson));
+      $timeout(function() {
+        spriteManager.import(JSON.parse(demoSpriteJson));
+        // spriteManager.next();
+      });
     });
 
   });

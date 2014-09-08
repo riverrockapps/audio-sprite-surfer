@@ -1,6 +1,6 @@
 {
-  "name": "audiospritesurfer",
-  "version": "0.0.0",
+  "name": "audio-sprite-surfer",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.1",
@@ -12,7 +12,7 @@
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-cssmin": "^0.9.0",
     "grunt-contrib-htmlmin": "^0.3.0",
-    "grunt-contrib-imagemin": "^0.7.0",
+    "grunt-contrib-imagemin": "^0.8.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
@@ -36,5 +36,29 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "description": "Generate JSON for your Audio Sprites",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/riverrockapps/audio-sprite-surfer.git"
+  },
+  "keywords": [
+    "audio",
+    "sound",
+    "sprite",
+    "surfer",
+    "json",
+    "generate",
+    "generator"
+  ],
+  "author": "Ian Lovett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riverrockapps/audio-sprite-surfer/issues"
+  },
+  "homepage": "https://github.com/riverrockapps/audio-sprite-surfer"
 }

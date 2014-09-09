@@ -56,7 +56,7 @@
     "generator"
   ],
   "author": "Ian Lovett",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/riverrockapps/audio-sprite-surfer/issues"
   },

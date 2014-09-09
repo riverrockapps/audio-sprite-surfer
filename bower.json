@@ -1,6 +1,6 @@
 {
   "name": "audio-sprite-surfer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "angular": "1.2.16",
     "json3": "~3.3.1",
@@ -18,5 +18,32 @@
     "angular-mocks": "1.2.16",
     "angular-scenario": "1.2.16"
   },
-  "appPath": "app"
+  "appPath": "app",
+  "homepage": "https://github.com/riverrockapps/audio-sprite-surfer",
+  "authors": [
+    "Ian Lovett <i.c.lovett@gmail.com>"
+  ],
+  "description": "Generate JSON for your Sound Sprites",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "audio",
+    "sprite",
+    "sound",
+    "surfer",
+    "json",
+    "generate",
+    "generator"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

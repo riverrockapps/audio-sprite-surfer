@@ -33,8 +33,6 @@ angular.module('audioSpriteSurferApp')
           scope.spriteManager.setActive(scope.sprite);
         }
 
-        scope.activate();
-
       }
     };
   });

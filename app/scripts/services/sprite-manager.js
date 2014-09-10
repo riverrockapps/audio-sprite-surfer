@@ -28,6 +28,7 @@ angular.module('audioSpriteSurferApp')
         var sprite = new Sprite();
         m.sprites.push(sprite);
         $timeout(function() {
+          m.setActive(sprite);
           $rootScope.$broadcast('sprite.focus', sprite);
         });
       }

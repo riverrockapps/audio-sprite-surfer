@@ -66,7 +66,7 @@ angular.module('audioSpriteSurferApp')
     wavesurfer.once('ready', function() {
       $timeout(function() {
         spriteManager.import(JSON.parse(demoSpriteJson));
-        // spriteManager.next();
+        spriteManager.next();
       });
     });
 

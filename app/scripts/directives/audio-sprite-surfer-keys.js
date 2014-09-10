@@ -13,7 +13,7 @@ angular.module('audioSpriteSurferApp')
 
         $document.bind('keydown', function($event) {
 
-          $timeout(function() {
+          scope.$apply(function() {
 
             var stop = false;
 
